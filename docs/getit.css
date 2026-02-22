@@ -27,6 +27,34 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Edição da propriedade .appbar */
+.appbar{
+  position: fixed;                  
+  top: 0; left: 0; right: 0;
+  height: 84px;                     
+  background: #f7d736;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 5px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  z-index: 1000;
+}
+
+.appbar .logo{
+  height: 56px;
+  width: auto;
+  display: inline-block;
+}
+
+.appbar .subtitle{
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2px;
+}
+
+
 /* Você pode usar o CSS comentado abaixo, se ajudar */
 /* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
 /* .btn {
