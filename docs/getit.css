@@ -80,23 +80,29 @@ body {
   gap: 40px 40px; /* espaço horizontal e vertical (aqui é o segredo) */
 }
 
+.form-card-title::placeholder {
+  font-size: 26px;
+  font-weight: 700;
+  color: #4c4c4c;
+}
+
 /* ========== SEÇÃO 3: Estilização do Form-Card ========== */
 .form-card {
   width: 520px;
   margin: 0 auto 40px auto;
-  padding: 24px;
+  padding: 10px;
   background-color: white;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
 }
 
 .form-card-title {
   display: block;
   width: 100%;
-  height: 50px;                 /* altura visual similar à referência */
-  padding: 10px 14px;
-  margin: 0 0 12px 0;
-  font-size: 20px;              /* título maior */
+  height: 15px;                 /* altura visual similar à referência */
+  padding: 1px 14px;
+  margin: 10px 10px 12px 0;
+  font-size: 200px;              /* título maior */
   font-weight: 500;
   color: #333;
   border: none;                 /* remove a caixa padrão do browser */
@@ -111,7 +117,7 @@ body {
   width: 100%;
   min-height: 56px;
   padding: 10px 14px;
-  margin: 0 0 14px 0;
+  margin: 0 0 1px 0;
   font-size: 15px;
   color: #444;
   border: none;
@@ -124,7 +130,7 @@ body {
 .form-card-title::placeholder,
 .autoresize::placeholder {
   color: #9e9e9e;
-  font-size: 15px;
+  font-size: 18px;
   opacity: 1; 
 }
 
@@ -134,7 +140,7 @@ body {
   width: 185px;
   min-height: 115px;
   padding: 15px;
-  border-radius: 3px;
+  border-radius: 7px;
   background: #fae890;
   box-shadow: 
     0 6px 10px rgba(0, 0, 0, 0.2),
@@ -246,17 +252,16 @@ body {
 } 
 
 .card-container{
-  width: min(1200px, 96vw);
+  width: 100%;
+  max-width: calc((185px * 6) + (48px * 5));
   margin: 0 auto 60px;
 
   display: grid;
   grid-template-columns: repeat(6, 185px);
-  justify-content: center;
   gap: 42px 48px;
-
-  justify-items: center;
-  align-items: start;
+  justify-content: center;
 }
+
 
 /* efeito solto usando nth*/
 
@@ -267,7 +272,29 @@ body {
 .card-container .card:nth-child(5){ margin-top: 6px; }
 .card-container .card:nth-child(6){ margin-top: -4px; }
 
-.card-container .card:nth-child(7){ margin-top: 10px; }
-.card-container .card:nth-child(8){ margin-top: -8px; }
-.card-container .card:nth-child(9){ margin-top: 8px; }
-.card-container .card:nth-child(10){ margin-top: -6px; }
+/* CENTRALIZANDO OS 4 ÚLTIMOS CARDS */
+.card-container .card:nth-child(7){
+  margin-top: 10px;
+  grid-column: 2;
+  margin-left: -120px 
+}
+
+.card-container .card:nth-child(8){
+   margin-top: -8px;
+  grid-column: 3;
+  margin-right: 100px;
+}
+
+.card-container .card:nth-child(9){
+  margin-top: 8px;
+  grid-column: 4;
+  margin-right: 100px;
+  margin-left: 70px;
+}
+
+.card-container .card:nth-child(10){
+  margin-top: -6px;
+  grid-column: 5;
+  margin-right: 100px;
+  margin-left: 150px;
+}
