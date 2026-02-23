@@ -37,7 +37,7 @@ body {
   align-items: center;
   gap: 18px;
   padding: 0 5px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
   z-index: 1000;
 }
 
@@ -54,24 +54,164 @@ body {
   letter-spacing: 0.2px;
 }
 
+/* Recomendado: padding no body para acomodar a appbar fixa */
+body {
+  /* já tinha fontes; aqui só garantimos espaço no topo */
+  padding-top: 110px; /* 84px (altura da appbar) + 26px de folga */
+  transition: padding-top 160ms ease; /* útil para testes visuais rápidos */
+}
+
+.container {
+  margin-top: 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+}
+
+/* ========== SEÇÃO 3: Estilização do Form-Card ========== */
+.form-card {
+  width: 520px;
+  margin: 0 auto 40px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-card-title {
+  display: block;
+  width: 100%;
+  height: 50px;                 /* altura visual similar à referência */
+  padding: 10px 14px;
+  margin: 0 0 12px 0;
+  font-size: 20px;              /* título maior */
+  font-weight: 500;
+  color: #333;
+  border: none;                 /* remove a caixa padrão do browser */
+  background: transparent;      /* integra com o card */
+  outline: none;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.autoresize {
+  display: block;
+  width: 100%;
+  min-height: 56px;
+  padding: 10px 14px;
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  color: #444;
+  border: none;
+  background: transparent;
+  resize: vertical;
+  outline: none;
+  border-radius: 4px;
+}
+
+.form-card-title::placeholder,
+.autoresize::placeholder {
+  color: #9e9e9e;
+  font-size: 15px;
+  opacity: 1; 
+}
+
+
+/* ========== SEÇÃO 4: Estilização dos Post-Its ========== */
+.card {
+  width: 220px;
+  min-height: 140px;
+  padding: 15px;
+  border-radius: 6px;
+  background: #fae890;
+  box-shadow: 
+    0 6px 10px rgba(0, 0, 0, 0.2),
+    0 22px 60px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  vertical-align: top;
+  transform-origin: center;
+  position: relative;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  font-family: "Permanent Marker", "Roboto", sans-serif;
+  color: #141414;
+  line-height: 1.18;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 14px 30px rgba(0, 0, 0, 0.20),
+    0 46px 110px rgba(0, 0, 0, 0.20);
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card-content {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ========== SEÇÃO 10: Variação das cores dos cards ========== */
+
+.card-container .card:nth-child(5n + 1) {
+  background-color: #ead3a7;
+}
+
+.card-container .card:nth-child(5n + 2) {
+  background-color: #9de0f5;
+}
+
+.card-container .card:nth-child(5n + 3) {
+  background-color: #ef89ba;
+}
+
+.card-container .card:nth-child(5n + 4) {
+  background-color: #fae890;
+}
+
+.card-container .card:nth-child(5n) {
+  background-color: #abe9c1;
+}
+
+/* ========== SEÇÃO 6: Rotações dos cards ========== */
+
+.card-container .card:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.card-container .card:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.card-container .card:nth-child(3n) {
+  transform: rotate(-5deg);
+}
+
+.card-container .card:nth-child(4n) {
+  transform: rotate(5deg);
+}
 
 /* Você pode usar o CSS comentado abaixo, se ajudar */
 /* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
-/* .btn {
-  position: relative;
+.btn {
   display: block;
-  padding: 10px 15px;
-
-  overflow: hidden;
-
-  border-width: 0;
-  outline: none;
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-
-  background-color: #f7d736;
-
-  transition: background-color 0.3s;
+  width: 100%;
+  padding: 12px 18px;
+  margin-top: 6px;
+  border-radius: 6px;
+  background: #f7d736;          /* amarelo alvo (ajuste se quiser outro tom) */
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #111;
+  box-shadow:
+    0 2px 0 rgba(0,0,0,0.06) inset,  
+    0 6px 16px rgba(0,0,0,0.10);      
 }
 
 .btn > * {
@@ -105,4 +245,4 @@ body {
   padding-top: 120%;
 
   transition: width 0.2s ease-out, padding-top 0.2s ease-out;
-} */
+} 
