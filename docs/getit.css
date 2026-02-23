@@ -68,6 +68,17 @@ body {
   margin-right: auto;
   padding: 0 24px;
 }
+/* organização mural */
+.card-container{
+  width: min(1100px, 94vw);
+  margin: 0 auto 60px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 40px 40px; /* espaço horizontal e vertical (aqui é o segredo) */
+}
 
 /* ========== SEÇÃO 3: Estilização do Form-Card ========== */
 .form-card {
@@ -120,16 +131,16 @@ body {
 
 /* ========== SEÇÃO 4: Estilização dos Post-Its ========== */
 .card {
-  width: 220px;
-  min-height: 140px;
+  width: 185px;
+  min-height: 115px;
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 3px;
   background: #fae890;
   box-shadow: 
     0 6px 10px rgba(0, 0, 0, 0.2),
     0 22px 60px rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  
   transform-origin: center;
   position: relative;
   transition: transform 160ms ease, box-shadow 160ms ease;
@@ -139,7 +150,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-3px);
   box-shadow: 
     0 14px 30px rgba(0, 0, 0, 0.20),
     0 46px 110px rgba(0, 0, 0, 0.20);
@@ -156,45 +167,32 @@ body {
   font-size: 14px;
 }
 
-/* ========== SEÇÃO 10: Variação das cores dos cards ========== */
+/* ========== SEÇÃO 10: Variação das cores dos cards ========== 
 
-.card-container .card:nth-child(5n + 1) {
-  background-color: #ead3a7;
-}
 
-.card-container .card:nth-child(5n + 2) {
-  background-color: #9de0f5;
-}
+*/
 
-.card-container .card:nth-child(5n + 3) {
-  background-color: #ef89ba;
-}
+.card.card-color-1{ background-color:#ead3a7; }
+.card.card-color-2{ background-color:#9de0f5; }
+.card.card-color-3{ background-color:#ef89ba; }
+.card.card-color-4{ background-color:#fae890; }
+.card.card-color-5{ background-color:#abe9c1; }
 
-.card-container .card:nth-child(5n + 4) {
-  background-color: #fae890;
-}
+/* ========== SEÇÃO 6: Rotações dos cards ========== 
+*/
 
-.card-container .card:nth-child(5n) {
-  background-color: #abe9c1;
-}
 
-/* ========== SEÇÃO 6: Rotações dos cards ========== */
-
-.card-container .card:nth-child(odd) {
-  transform: rotate(-3deg);
-}
-
-.card-container .card:nth-child(even) {
-  transform: rotate(3deg);
-}
-
-.card-container .card:nth-child(3n) {
-  transform: rotate(-5deg);
-}
-
-.card-container .card:nth-child(4n) {
-  transform: rotate(5deg);
-}
+.card.card-rotation-1  { transform: rotate(-4deg); }
+.card.card-rotation-2  { transform: rotate(3deg); }
+.card.card-rotation-3  { transform: rotate(-2deg); }
+.card.card-rotation-4  { transform: rotate(4deg); }
+.card.card-rotation-5  { transform: rotate(-3deg); }
+.card.card-rotation-6  { transform: rotate(2deg); }
+.card.card-rotation-7  { transform: rotate(-1deg); }
+.card.card-rotation-8  { transform: rotate(1deg); }
+.card.card-rotation-9  { transform: rotate(-4deg); }
+.card.card-rotation-10 { transform: rotate(2deg); }
+.card.card-rotation-11 { transform: rotate(3deg); }
 
 /* Você pode usar o CSS comentado abaixo, se ajudar */
 /* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
@@ -204,7 +202,7 @@ body {
   padding: 12px 18px;
   margin-top: 6px;
   border-radius: 6px;
-  background: #f7d736;          /* amarelo alvo (ajuste se quiser outro tom) */
+  background: #f7d736;          
   border: none;
   font-weight: 600;
   cursor: pointer;
@@ -246,3 +244,30 @@ body {
 
   transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 } 
+
+.card-container{
+  width: min(1200px, 96vw);
+  margin: 0 auto 60px;
+
+  display: grid;
+  grid-template-columns: repeat(6, 185px);
+  justify-content: center;
+  gap: 42px 48px;
+
+  justify-items: center;
+  align-items: start;
+}
+
+/* efeito solto usando nth*/
+
+.card-container .card:nth-child(1){ margin-top: 8px; }
+.card-container .card:nth-child(2){ margin-top: -6px; }
+.card-container .card:nth-child(3){ margin-top: 4px; }
+.card-container .card:nth-child(4){ margin-top: -10px; }
+.card-container .card:nth-child(5){ margin-top: 6px; }
+.card-container .card:nth-child(6){ margin-top: -4px; }
+
+.card-container .card:nth-child(7){ margin-top: 10px; }
+.card-container .card:nth-child(8){ margin-top: -8px; }
+.card-container .card:nth-child(9){ margin-top: 8px; }
+.card-container .card:nth-child(10){ margin-top: -6px; }
