@@ -7,3 +7,4 @@ Adicione aqui o nome de todos os integrantes:
 
 - Lucas Pavan Agnoletto
 - Marcos Giovani Rosado
+- Marlize de Lourdes Debossan Coelho
