@@ -39,7 +39,7 @@ body {
   align-items: center;
   gap: 18px;
   padding: 0 24px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   z-index: 1000;
 }
 
@@ -76,12 +76,12 @@ body {
 /* ========== SEÇÃO 3: Estilização do Form-Card ========== */
 /* ===== Formulário (bloco branco) ===== */
 .form-card{
-  width: min(760px, 92vw);
-  margin: 28px auto 40px;          /* espaço abaixo da appbar */
+   width: min(520px, 90vw);
+  margin: 28px auto 40px;
   padding: 18px 18px 14px;
   background: #fff;
   border-radius: 6px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.30);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.3);
 }
 
 /* input do título */
@@ -91,19 +91,19 @@ body {
   outline: none;
   background: transparent;
 
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   color: #4c4c4c;
 
   margin: 0 0 10px 0;
 }
 
 .autoresize{
-  min-height: 22px;
-  height: 22px;
+  white-space: nowrap;   /* impede quebra de linha */
+  overflow-x: auto;      /* cria scroll horizontal se precisar */
 
   padding: 6px 0;      /* tira “caixinha” interna */
-  margin-bottom: 8px;
+  margin-bottom: -10px;
 
   border: none;        /* remove borda */
   outline: none;       /* remove linha de foco */
@@ -125,8 +125,8 @@ body {
 /* placeholders */
 .form-card-title::placeholder{
   color: #7a7a7a;
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 20px;   /* Tamanho do titulo*/
+  font-weight: 500;  /* ajustado para ficar mais leve */
   opacity: 1;
 }
 
@@ -137,39 +137,29 @@ body {
 }
 
 
-.btn{
-  width: 100%;
-  height: 40px;
-  border: none;
-  border-radius: 2px;
-  margin-top: 0px;  /* ou 0 */
-  background: #f7d736;
-  font-weight: 500;
-  color: #111;
-
-  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
-  cursor: pointer;
-}
 
 /* ========== SEÇÃO 4: Estilização dos Post-Its ========== */
 .card {
-  width:195px;
-  min-height: 105px;
-  padding: 15px;
-  border-radius: 7px;
+  width: 200px;
+  padding: 14px;
+  border-radius: 6px;
+
   background: #fae890;
+
   box-shadow: 
-    0 6px 10px rgba(0, 0, 0, 0.2),
-    0 22px 60px rgba(0, 0, 0, 0.2);
-  display: block;
+    0 6px 10px rgba(0, 0, 0, 0.3),
+    0 20px 20px rgba(0, 0, 0, 0.1);
+
+  position: relative;   /* importante */
   
-  transform-origin: center;
-  position: relative;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  display: flex;
+  flex-direction: column;
+
   font-family: "Permanent Marker", "Roboto", sans-serif;
   color: #4c4c4c;
-  line-height: 1.18;
 }
+
+
 
 .card:hover {
   transform: translateY(-3px);
@@ -179,18 +169,22 @@ body {
 }
 
 .card-title {
-  
   color: #111;       /* preto (não tão estourado quanto #000) */
   font-size: 18px;
+  margin: 0;
   margin-bottom: 10px;
   font-weight: 700;
   text-align: left;
 }
 
 .card-content {
-  margin: 0;
-  font-size: 14px;
-  text-align: center;   
+    display: flex;
+  align-items: center;     /* centraliza vertical */
+  justify-content: center; /* centraliza horizontal */
+  margin-top: 12px;
+  margin-bottom: -10px;
+  font-size: 16px;
+    
 }
 /* ========== SEÇÃO 10: Variação das cores dos cards ========== 
 
@@ -234,7 +228,7 @@ body {
   color: #111;
   box-shadow:
     0 2px 0 rgba(0,0,0,0.06) inset,  
-    0 6px 16px rgba(0,0,0,0.10);      
+    0 1px 5px rgba(0,0,0,0.60);      
 }
 
 .btn > * {
@@ -286,8 +280,8 @@ body {
 
 .card-container .card:nth-child(1){ margin-top: 8px; }
 .card-container .card:nth-child(2){ margin-top: -6px; }
-.card-container .card:nth-child(3){ margin-top: 4px; }
-.card-container .card:nth-child(4){ margin-top: -10px; }
+.card-container .card:nth-child(3){ margin-top: 2px; }
+.card-container .card:nth-child(4){ margin-top: -5px; }
 .card-container .card:nth-child(5){ margin-top: 6px; }
 .card-container .card:nth-child(6){ margin-top: -4px; }
 
