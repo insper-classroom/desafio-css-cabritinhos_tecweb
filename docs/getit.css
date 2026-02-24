@@ -29,7 +29,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* Edição da propriedade .appbar */
 .appbar{
   position: fixed;                  
   top: 0; left: 0; right: 0;
@@ -56,11 +55,9 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* Recomendado: padding no body para acomodar a appbar fixa */
 body {
-  /* já tinha fontes; aqui só garantimos espaço no topo */
-  padding-top: 84px; /* 84px (altura da appbar) + 26px de folga */
-  transition: padding-top 160ms ease; /* útil para testes visuais rápidos */
+  padding-top: 84px; 
+  transition: padding-top 160ms ease; 
 }
 
 .container {
@@ -70,11 +67,7 @@ body {
   margin-right: auto;
   padding: 0 24px;
 }
-/* organização mural */
 
-
-/* ========== SEÇÃO 3: Estilização do Form-Card ========== */
-/* ===== Formulário (bloco branco) ===== */
 .form-card{
    width: min(520px, 90vw);
   margin: 28px auto 40px;
@@ -84,35 +77,28 @@ body {
   box-shadow: 0 10px 10px rgba(0,0,0,0.3);
 }
 
-/* input do título */
 .form-card-title{
   width: 100%;
   border: none;
   outline: none;
   background: transparent;
-
   font-size: 18px;
   font-weight: 500;
   color: #4c4c4c;
-
   margin: 0 0 10px 0;
 }
 
 .autoresize{
-  white-space: nowrap;   /* impede quebra de linha */
-  overflow-x: auto;      /* cria scroll horizontal se precisar */
-
-  padding: 6px 0;      /* tira “caixinha” interna */
+  white-space: nowrap;  
+  overflow-x: auto;      
+  padding: 6px 0;      
   margin-bottom: -10px;
-
-  border: none;        /* remove borda */
-  outline: none;       /* remove linha de foco */
-  box-shadow: none;    /* remove sombra de foco */
+  border: none;        
+  outline: none;       
+  box-shadow: none;   
   background: transparent;
-
   resize: none;
   overflow: hidden;
-
   -webkit-appearance: none;
   appearance: none;
 }
@@ -122,11 +108,11 @@ body {
   outline: none;
   box-shadow: none;
 }
-/* placeholders */
+
 .form-card-title::placeholder{
   color: #7a7a7a;
-  font-size: 20px;   /* Tamanho do titulo*/
-  font-weight: 500;  /* ajustado para ficar mais leve */
+  font-size: 20px;   
+  font-weight: 500;  
   opacity: 1;
 }
 
@@ -136,30 +122,20 @@ body {
   opacity: 1;
 }
 
-
-
-/* ========== SEÇÃO 4: Estilização dos Post-Its ========== */
 .card {
   width: 200px;
   padding: 14px;
   border-radius: 6px;
-
   background: #fae890;
-
   box-shadow: 
     0 6px 10px rgba(0, 0, 0, 0.3),
     0 20px 20px rgba(0, 0, 0, 0.1);
-
-  position: relative;   /* importante */
-  
+  position: relative;   
   display: flex;
   flex-direction: column;
-
   font-family: "Permanent Marker", "Roboto", sans-serif;
   color: #4c4c4c;
 }
-
-
 
 .card:hover {
   transform: translateY(-3px);
@@ -169,7 +145,7 @@ body {
 }
 
 .card-title {
-  color: #111;       /* preto (não tão estourado quanto #000) */
+  color: #111;      
   font-size: 18px;
   margin: 0;
   margin-bottom: 10px;
@@ -178,28 +154,20 @@ body {
 }
 
 .card-content {
-    display: flex;
-  align-items: center;     /* centraliza vertical */
-  justify-content: center; /* centraliza horizontal */
+  display: flex;
+  align-items: center;     
+  justify-content: center; 
   margin-top: 12px;
   margin-bottom: -10px;
   font-size: 16px;
-    
+  flex-grow: 1;
 }
-/* ========== SEÇÃO 10: Variação das cores dos cards ========== 
-
-
-*/
 
 .card.card-color-1{ background-color:#ead3a7; }
 .card.card-color-2{ background-color:#9de0f5; }
 .card.card-color-3{ background-color:#ef89ba; }
 .card.card-color-4{ background-color:#fae890; }
 .card.card-color-5{ background-color:#abe9c1; }
-
-/* ========== SEÇÃO 6: Rotações dos cards ========== 
-*/
-
 
 .card.card-rotation-1  { transform: rotate(-4deg); }
 .card.card-rotation-2  { transform: rotate(3deg); }
@@ -213,8 +181,6 @@ body {
 .card.card-rotation-10 { transform: rotate(2deg); }
 .card.card-rotation-11 { transform: rotate(3deg); }
 
-/* Você pode usar o CSS comentado abaixo, se ajudar */
-/* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
 .btn {
   display: block;
   width: 100%;
@@ -237,19 +203,14 @@ body {
 
 .btn:before {
   content: "";
-
   position: absolute;
   top: 50%;
   left: 50%;
-
   display: block;
   width: 0;
   padding-top: 0;
-
   border-radius: 100%;
-
   background-color: rgba(236, 240, 241, 0.3);
-
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -260,7 +221,6 @@ body {
 .btn:active:before {
   width: 120%;
   padding-top: 120%;
-
   transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 } 
 
@@ -268,15 +228,11 @@ body {
   width: 100%;
   max-width: calc((195px * 6) + (48px * 5));
   margin: 0 auto 60px;
-
   display: grid;
   grid-template-columns: repeat(6, 195px);
   gap: 42px 48px;
   justify-content: center;
 }
-
-
-/* efeito solto usando nth*/
 
 .card-container .card:nth-child(1){ margin-top: 8px; }
 .card-container .card:nth-child(2){ margin-top: -6px; }
@@ -284,8 +240,6 @@ body {
 .card-container .card:nth-child(4){ margin-top: -5px; }
 .card-container .card:nth-child(5){ margin-top: 6px; }
 .card-container .card:nth-child(6){ margin-top: -4px; }
-
-/* CENTRALIZANDO OS 4 ÚLTIMOS CARDS */
 .card-container .card:nth-child(7){
   margin-top: 10px;
   grid-column: 2;
