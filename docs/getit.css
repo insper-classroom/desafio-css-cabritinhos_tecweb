@@ -24,6 +24,8 @@ Algumas informações úteis e dicas:
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Roboto", sans-serif;
 }
 
@@ -36,7 +38,7 @@ body {
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 0 5px;
+  padding: 0 24px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.5);
   z-index: 1000;
 }
@@ -57,7 +59,7 @@ body {
 /* Recomendado: padding no body para acomodar a appbar fixa */
 body {
   /* já tinha fontes; aqui só garantimos espaço no topo */
-  padding-top: 110px; /* 84px (altura da appbar) + 26px de folga */
+  padding-top: 84px; /* 84px (altura da appbar) + 26px de folga */
   transition: padding-top 160ms ease; /* útil para testes visuais rápidos */
 }
 
@@ -69,76 +71,90 @@ body {
   padding: 0 24px;
 }
 /* organização mural */
-.card-container{
-  width: min(1100px, 94vw);
-  margin: 0 auto 60px;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  gap: 40px 40px; /* espaço horizontal e vertical (aqui é o segredo) */
-}
-
-.form-card-title::placeholder {
-  font-size: 26px;
-  font-weight: 700;
-  color: #4c4c4c;
-}
 
 /* ========== SEÇÃO 3: Estilização do Form-Card ========== */
-.form-card {
-  width: 520px;
-  margin: 0 auto 40px auto;
-  padding: 10px;
-  background-color: white;
+/* ===== Formulário (bloco branco) ===== */
+.form-card{
+  width: min(760px, 92vw);
+  margin: 28px auto 40px;          /* espaço abaixo da appbar */
+  padding: 18px 18px 14px;
+  background: #fff;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.30);
 }
 
-.form-card-title {
-  display: block;
+/* input do título */
+.form-card-title{
   width: 100%;
-  height: 15px;                 /* altura visual similar à referência */
-  padding: 1px 14px;
-  margin: 10px 10px 12px 0;
-  font-size: 200px;              /* título maior */
-  font-weight: 500;
-  color: #333;
-  border: none;                 /* remove a caixa padrão do browser */
-  background: transparent;      /* integra com o card */
+  border: none;
   outline: none;
-  border-radius: 6px;
+  background: transparent;
+
+  font-size: 30px;
+  font-weight: 600;
+  color: #4c4c4c;
+
+  margin: 0 0 10px 0;
+}
+
+.autoresize{
+  min-height: 22px;
+  height: 22px;
+
+  padding: 6px 0;      /* tira “caixinha” interna */
+  margin-bottom: 8px;
+
+  border: none;        /* remove borda */
+  outline: none;       /* remove linha de foco */
+  box-shadow: none;    /* remove sombra de foco */
+  background: transparent;
+
+  resize: none;
+  overflow: hidden;
+
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.autoresize:focus{
+  border: none;
+  outline: none;
   box-shadow: none;
 }
+/* placeholders */
+.form-card-title::placeholder{
+  color: #7a7a7a;
+  font-size: 30px;
+  font-weight: 600;
+  opacity: 1;
+}
 
-.autoresize {
-  display: block;
+.autoresize::placeholder{
+  color: #9a9a9a;
+  font-size: 14px;
+  opacity: 1;
+}
+
+
+.btn{
   width: 100%;
-  min-height: 56px;
-  padding: 10px 14px;
-  margin: 0 0 1px 0;
-  font-size: 15px;
-  color: #444;
+  height: 40px;
   border: none;
-  background: transparent;
-  resize: vertical;
-  outline: none;
-  border-radius: 4px;
-}
+  border-radius: 2px;
+  margin-top: 0px;  /* ou 0 */
+  background: #f7d736;
+  font-weight: 500;
+  color: #111;
 
-.form-card-title::placeholder,
-.autoresize::placeholder {
-  color: #9e9e9e;
-  font-size: 18px;
-  opacity: 1; 
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+  cursor: pointer;
 }
-
 
 /* ========== SEÇÃO 4: Estilização dos Post-Its ========== */
 .card {
-  width: 185px;
-  min-height: 115px;
+  width:195px;
+  min-height: 105px;
   padding: 15px;
   border-radius: 7px;
   background: #fae890;
@@ -151,7 +167,7 @@ body {
   position: relative;
   transition: transform 160ms ease, box-shadow 160ms ease;
   font-family: "Permanent Marker", "Roboto", sans-serif;
-  color: #141414;
+  color: #4c4c4c;
   line-height: 1.18;
 }
 
@@ -163,16 +179,19 @@ body {
 }
 
 .card-title {
+  
+  color: #111;       /* preto (não tão estourado quanto #000) */
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: 700;
+  text-align: left;
 }
 
 .card-content {
   margin: 0;
   font-size: 14px;
+  text-align: center;   
 }
-
 /* ========== SEÇÃO 10: Variação das cores dos cards ========== 
 
 
@@ -253,11 +272,11 @@ body {
 
 .card-container{
   width: 100%;
-  max-width: calc((185px * 6) + (48px * 5));
+  max-width: calc((195px * 6) + (48px * 5));
   margin: 0 auto 60px;
 
   display: grid;
-  grid-template-columns: repeat(6, 185px);
+  grid-template-columns: repeat(6, 195px);
   gap: 42px 48px;
   justify-content: center;
 }
